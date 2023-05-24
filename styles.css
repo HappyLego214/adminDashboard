@@ -364,8 +364,8 @@
     min-height: 100vh;
     min-width: 1450px;
     display: grid;
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 250px 4fr;
+    grid-template-columns: 300px 6fr;
+    grid-template-rows: 250px 3fr;
     grid-template-areas:
     "sidebar  header"
     "sidebar  body"
@@ -375,7 +375,10 @@
 
   .sidebar {
     display: grid;
+    position: fixed;
+    height: 100%;
     grid-template-rows: 100px 1fr 1fr;
+    top: 0;
     grid-area: sidebar;
   }
 
@@ -467,7 +470,7 @@
   .main-content {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 60px 10fr;
+    grid-template-rows: 60px 1fr;
     grid-area: body;
     grid-template-areas: 
     "title title"
@@ -480,6 +483,7 @@
     padding: 15px 50px 50px 50px;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, 350px);
   }
 
   .card {
@@ -487,7 +491,6 @@
     grid-template-rows: 1fr 60px;
     border-radius: 15px;
     padding: 20px;
-    height: 300px;
   }
 
   .searchbar {
@@ -512,8 +515,10 @@
 
   .sidetab {
     grid-area: sidetab;
+    gap: 25px;
+    margin-right: 25px;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(auto-fit);
   }
 
   .tabTitles {
@@ -726,5 +731,75 @@
     margin: 0;
   }
 
+  .announcement-box {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    padding: 30px;
+  }
+  
+  .announce {
+    font-size: smaller;
+    line-height: 20px;
+  }
+  
+  .announcement-box hr {
+    width: 100%;
+    margin: 0px;
+  }
 
+  .announce h4 {
+    margin: 0;
+  }
+
+  .announce p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+
+  .contacts-container {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+  }
+
+  .contacts-box {
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .contact {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+  }
+
+  .contact-textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+  }
+
+  .contact-textbox h4 {
+   margin: 0;
+  }
+
+  .contact-textbox p {
+    margin-top: 2px;
+    margin: 0;
+  }
+
+  .contact-pf img {
+    border-radius: 100px;
+  }
+
+  .contact-pf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+  }
   

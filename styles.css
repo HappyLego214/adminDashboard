@@ -357,14 +357,20 @@
   }
 
   div {
-    border: 1px solid black;
+   border: 0px solid black;
+  }
+
+  html {
+    background-color: #eeeeee;
   }
 
   .main-container {
+    gap: 15px;
     min-height: 100vh;
     min-width: 1450px;
+    margin-right: 15px;
     display: grid;
-    grid-template-columns: 300px 6fr;
+    grid-template-columns: 1fr 6fr;
     grid-template-rows: 250px 3fr;
     grid-template-areas:
     "sidebar  header"
@@ -374,22 +380,26 @@
   }
 
   .sidebar {
+    background-color: #1E1A22;
     display: grid;
-    position: fixed;
     height: 100%;
     grid-template-rows: 100px 1fr 1fr;
-    top: 0;
     grid-area: sidebar;
   }
 
   .header {
     display: grid;
+    gap: 15px;
+    background-color: #eeeeee;
     grid-template-rows: 100px 150px;
     grid-area: header;
   }
 
   .top-header {
     display: grid;
+    margin-top: 10px;
+    border-radius: 25px;
+    background-color: #ffffff;
     grid-template-columns: 3fr 1fr;
   }
 
@@ -397,8 +407,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    min-width: 350px;
-
+    min-width: 380px;
   }
 
   .right-profile h3 {
@@ -446,8 +455,11 @@
   }
 
   .bottom-header {
+    border-radius: 25px;
     display: grid;
+    background-color: #ffffff;
     grid-template-columns: 2fr 1fr;
+    margin-bottom: 10px;
   }
 
   .buttons {
@@ -461,36 +473,59 @@
   }
 
   .buttons button {
-    border: 1px solid black;
+    border: none;
+    background-color: #1E1A22;
+    font-weight: bold;
+    color: #ffffff;
     height: 55px;
     width: 160px;
     border-radius: 25px;
   }
 
   .main-content {
+    gap: 15px;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 1fr;
     grid-area: body;
     grid-template-areas: 
     "title title"
     "container sidetab";
   }
 
-  .cards-container {
-    grid-area: container;
+  .content-container {
+    background-color: #ffffff;
+    border-radius: 25px;
     display: grid;
-    padding: 15px 50px 50px 50px;
+    grid-area: container;
+    grid-template-rows: 60px 4fr;
+  }
+
+  .cards-container {
+    display: grid;
+    padding: 15px 30px 30px 30px;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fit, 350px);
+    grid-template-rows: repeat(auto-fit, min(300px));
   }
 
   .card {
     display: grid;
+    background-color: #eeeeee;
+    border: 2px solid black;
     grid-template-rows: 1fr 60px;
     border-radius: 15px;
     padding: 20px;
+  }
+
+  .main-textbox p {
+    margin: 5px 0px 0px 0px;
+  }
+
+  .main-textbox h3 {
+    margin: 15px 0px 0px 0px;
   }
 
   .searchbar {
@@ -539,11 +574,16 @@
     align-self: center;
     font-size: 2.3em;
     font-weight: 550;
+    color: white;
   }
 
   .logo {
     justify-self: right;
     align-self: center;
+  }
+
+  .logo img {
+    filter: invert();
   }
 
   .options-bar {
@@ -558,12 +598,12 @@
     list-style: none;
     padding-left: 25px;
     padding-right: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 
   .options-bar li a {
     text-decoration: none;
-    color: black;
+    color: white
   }
 
   .item-1 {
@@ -573,9 +613,10 @@
   .item-1::before {
     position: absolute;
     left: -15px;
-    bottom: 17px;
+    bottom: 39px;
     transform: scale(1);
-    content: url(/icons/home.svg)
+    filter: invert();
+    content: url(/icons/home.svg);
   }
 
   .item-2 {
@@ -587,7 +628,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/profile.svg);
   }
 
@@ -600,7 +642,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/msg.svg);
   }
 
@@ -613,7 +656,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/history.svg);
   }
 
@@ -626,7 +670,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/tasks.svg);
   }
 
@@ -639,14 +684,16 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
+
     content: url(/icons/community.svg);
   }
 
   .settings-bar {
     display: flex;
     justify-content: start;
-    align-items: self-end;
+    align-items: self-start;
     font-size: 1.5em;
   }
 
@@ -654,12 +701,12 @@
     list-style: none;
     padding-left: 25px;
     padding-right: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 
   .settings-bar a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 
   .setting-1 {
@@ -671,7 +718,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/setting.svg);
   }
 
@@ -684,7 +732,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/help.svg);
   }
 
@@ -697,7 +746,8 @@
     height: 30px;
     width: 30px;
     left: -20px;
-    bottom: 18px;
+    bottom: 40px;
+    filter: invert();
     content: url(/icons/privacy.svg);
   }
 
@@ -718,6 +768,7 @@
     display: flex;
     align-items: end;
     max-height: 70px;
+    min-width: 330px;
   }
 
   .cards-title h2 {
@@ -731,10 +782,22 @@
     margin: 0;
   }
 
+  .announcements-container {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 0px 25px 25px 25px;
+    display: grid;
+    grid-template-rows: 60px 1fr;
+  }
+
   .announcement-box {
+    margin-top: 13px;
     display: flex;
     gap: 15px;
     flex-direction: column;
+    border: 2px solid black;
+    background-color: #eeeeee;
+    border-radius: 25px;
     padding: 30px;
   }
   
@@ -758,12 +821,29 @@
   }
 
   .contacts-container {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 0px 25px 25px 25px;
     display: grid;
     grid-template-rows: 60px 1fr;
   }
 
-  .contacts-box {
+  .contacts-title {
     display: flex;
+    align-items: end;
+  }
+
+  .contacts-title h2 {
+    margin: 0;
+  }
+
+  .contacts-box {
+    margin-top: 13px;
+    border: 2px solid black;
+    background-color: #eeeeee;
+    display: flex;
+    border-radius: 25px;
+    margin-bottom: 25px;
     padding: 30px;
     gap: 20px;
     flex-direction: column;
@@ -783,7 +863,7 @@
   }
 
   .contact-textbox h4 {
-   margin: 0;
+    margin: 0;
   }
 
   .contact-textbox p {
